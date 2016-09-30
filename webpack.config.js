@@ -4,7 +4,6 @@ module.exports = {
   debug: true,
   devtool: 'inline-source-map',
   devServer: {
-    progress: true,
     inline: true,
     historyApiFallback: true,
     port: 8000
@@ -24,6 +23,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
+      },
+      {
+        loader: 'url-loader?limit=10000',
+        test: /\.(png|jpg|jpeg|gif|woff)$/
       },
       { test: /(\.css)$/, loaders: ['style', 'css'] },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
